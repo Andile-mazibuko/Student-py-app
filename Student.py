@@ -11,8 +11,10 @@ class Student(User):
                 f"'{self.last_name}', '{self.last_name}')")
 
     def get_student(self,id:int) :
-        return f"SELECT * WHERE id = {id}"
+        return f"SELECT * FROM student WHERE id = {id}"
 
     def update_student(self,id,first_name,last_name):
+        self.first_name = first_name
         return (f"UPDATE student "
-                f"SET first_name = '{first_name}', last_name = '{last_name}'")
+                f"SET first_name = '{first_name}', last_name = '{last_name}' "
+                f"FROM student")
